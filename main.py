@@ -1,7 +1,7 @@
 import datasets
 X,Y = datasets.load_nonlinear_example1()
 ex_X = datasets.polynomial2_features(X)
-print(X)
+print(ex_X)
 print(X[0])
 print(Y)
 
