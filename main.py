@@ -1,5 +1,6 @@
 import datasets
-X,Y = datasets.load_linear_example1()
+X,Y = datasets.load_nonlinear_example1()
+ex_X = datasets.polynomial2_features(X)
 print(X)
 print(X[0])
 print(Y)
@@ -12,9 +13,9 @@ print(model.x)
 import importlib
 importlib.reload(regression)
 model = regression.LinearRegression()
-model.fit(X,Y)
+model.fit(ex_X,Y)
 print(model.theta)
 
-print(model.predict(X))
+print(model.predict(ex_X))
 
-print(model.score(X,Y))
+print(model.score(ex_X,Y))
