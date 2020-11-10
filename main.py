@@ -1,14 +1,15 @@
 import datasets
 X,Y = datasets.load_nonlinear_example1()
-ex_X = datasets.polynomial2_features(X)
+ex_X = datasets.polynomial3_features(X)
 print(ex_X)
 print(X[0])
 print(Y)
 
 
 import regression
-model = regression.LinearRegression()
-print(model.x)
+model = regression.RidgeRegression(alpha=0.5)
+model = regression.RidgeRegression()
+print(model.alpha)
 
 import importlib
 importlib.reload(regression)
